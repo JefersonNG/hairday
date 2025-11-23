@@ -1,0 +1,27 @@
+{
+  "name": "HairDay",
+  "description": "Aplicaçao para agendamento corte de cabelo",
+  "author": {
+    "name": "jeferson nascimento"
+  },
+  "scripts": {
+    "server": "json-server --watch server.json --port 3333",
+    "build": "webpack",
+    "serve": "webpack serve"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "copy-webpack-plugin": "^13.0.1",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.5",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.103.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
