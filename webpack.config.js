@@ -5,7 +5,7 @@ const copyPlugin = require("copy-webpack-plugin")
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.js"),
   output: {
-    filename: "src/js/app[contenthash].js",
+    filename: "app[contenthash].js",
     path: path.resolve(__dirname, "dist"),
     clean: true
   },
@@ -20,14 +20,15 @@ module.exports = {
   },
   plugins: [
     new htmlWebpackPlugin({
-    template: path.resolve(__dirname, "index.html"),
-    filename: "index.html"
-  }),
+      template: path.resolve(__dirname, "index.html"),
+      filename: "index.html",
+      favicon: path.resolve(__dirname, "src", "assets", "scissors.svg")
+    }),
     new copyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "src", "assets"), 
-          to: "src/assets"
+          from: path.resolve(__dirname, "src", "assets"),
+          to: path.resolve(__dirname, "dist", "src", "assets")
         }
       ]
     })
@@ -47,6 +48,13 @@ module.exports = {
             targets: "defaults",
             presets: ['@babel/preset-env']
           }
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/img/[name][ext]"
         }
       }
     ]

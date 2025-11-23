@@ -1,8 +1,8 @@
 {
   "name": "HairDay",
-  "description": "Aplicaçao para agendamento corte de cabelo",
+  "description": "Aplicação para agendamento corte de cabelo",
   "author": {
-    "name": "jeferson nascimento"
+    "name": "Jeferson nascimento"
   },
   "scripts": {
     "server": "json-server --watch server.json --port 3333",
