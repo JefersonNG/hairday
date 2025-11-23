@@ -6,6 +6,7 @@ module.exports = {
   entry: path.resolve(__dirname, "src", "index.js"),
   output: {
     filename: "app[contenthash].js",
+    assetModuleFilename: "assets/img/[name][ext]",
     path: path.resolve(__dirname, "dist"),
     clean: true
   },
@@ -54,7 +55,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/img/[name][ext]"
+          filename: "src/assets/[name][ext]"
         }
       }
     ]
