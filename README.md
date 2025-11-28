@@ -1,90 +1,125 @@
-# ✂️ HairDay — Landing Page
+# HairDay -- Sistema de Agendamentos
 
-Uma landing page moderna, rápida e responsiva para um salão de beleza fictício.  
-Desenvolvida com **HTML, CSS e JavaScript**, empacotada com **Webpack** e otimizada para produção.
+Interface para gerenciamento de horários e agendamentos de um salão.\
+Projeto criado com HTML, CSS, JavaScript e JSON Server como API fake.
 
----
+------------------------------------------------------------------------
 
-## 🚀 Tecnologias Utilizadas
-- **HTML5**
-- **CSS3 / SCSS**
-- **JavaScript ES6+**
-- **Webpack 5**
-  - Babel Loader  
-  - CSS Loader & Style Loader  
-  - Copy Plugin  
-  - HTML Webpack Plugin  
+## 🚀 Funcionalidades
 
----
+-   Seleção de data
+-   Exibição de horários disponíveis por período (manhã, tarde e noite)
+-   Registro de agendamentos
+-   Remoção de agendamento
+-   Atualização automática da lista ao selecionar outra data
+-   API fake utilizando **json-server**
 
-## 📁 Estrutura do Projeto
+------------------------------------------------------------------------
 
-```
-hairday/
-├── dist/                # Arquivos finais após build
-│   ├── index.html
-│   ├── assets/
-│   └── js/
-├── src/
-│   ├── index.html
-│   ├── js/
-│   │   └── app.js
-│   ├── styles/
-│   │   └── main.css
-│   └── assets/
-│       ├── img1.jpg
-│       ├── img2.png
-│       └── logo.svg
-├── package.json
-├── webpack.config.js
-└── README.md
-```
+## 📂 Estrutura de Pastas
 
----
+    src/
+     ├── assets/
+     ├── js/
+     ├── libs/
+     ├── modules/
+     │    ├── form/
+     │    │    ├── data-change.js
+     │    │    ├── hours-click.js
+     │    │    ├── hours-load.js
+     │    │    ├── submit.js
+     │    │
+     │    ├── schedules/
+     │    │    ├── load.js
+     │    │    ├── show.js
+     │    │
+     │    ├── page-load.js
+     │
+     ├── services/
+     │    ├── api-config.js
+     │    ├── schedule-fetch.js
+     │    ├── scheduleNew.js
+     │
+     ├── styles/
+     └── utils/
+          ├── opening-hours.js
+          ├── index.js
 
-## 🛠️ Instalação & Desenvolvimento
+------------------------------------------------------------------------
 
-### 1️⃣ Instale as dependências
-```
+## 🛠️ Instalação
+
+### 1. Instale as dependências
+
+``` bash
 npm install
 ```
 
-### 2️⃣ Rode o servidor de desenvolvimento
-```
-npm run serve
-```
+### 2. Instale o **json-server**
 
-O Webpack abrirá o projeto em:  
-👉 http://localhost:9000
+**Instalação local:**
 
-### 3️⃣ Gerar build de produção
-```
-npm run build
+``` bash
+npm install json-server --save-dev
 ```
 
-Os arquivos finais estarão na pasta **/dist**.
+------------------------------------------------------------------------
 
----
+## ▶️ Executar API Fake
 
-## 🎨 Recursos da Aplicação
-- Layout responsivo  
-- Carregamento otimizado  
-- Cache busting automático  
-- Imagens copiadas para dist/assets  
-- Build limpo a cada execução  
+Usando o script configurado no `package.json`:
 
----
+``` json
+"server": "json-server --watch server.json --port 3333"
+```
 
-## 📷 Prévia do Projeto
-Adicione aqui uma captura de tela quando quiser.
+Execute:
 
----
+``` bash
+npm run server
+```
 
-## 📜 Licença
-Este projeto é de uso livre para estudo, modificação e personalização.
+A API ficará disponível em:
 
----
+    http://localhost:3333
 
-## ✨ Autor
-Feito com dedicação por **Jeferson**.  
-Se quiser melhorar, basta pedir! ✂️💇‍♂️
+### Endpoints principais:
+
+-   Listar agendamentos:
+
+```{=html}
+<!-- -->
+```
+    GET /schedules
+
+-   Buscar agendamento por ID:
+
+```{=html}
+<!-- -->
+```
+    GET /schedules/:id
+
+------------------------------------------------------------------------
+
+## ⚠️ Atenção com IDs numéricos
+
+O **json-server** trata IDs numéricos e strings de forma diferente.\
+Se seu ID for muito grande, use string:
+
+``` json
+{
+  "id": "1764207610537"
+}
+```
+
+------------------------------------------------------------------------
+
+## 📸 Preview
+
+![alt text](image.png)
+
+------------------------------------------------------------------------
+
+## 📄 Licença
+
+Projeto livre para estudos.
